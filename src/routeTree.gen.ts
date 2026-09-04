@@ -9,50 +9,1420 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as MarketingRouteImport } from './routes/_marketing'
+import { Route as ConsoleRouteImport } from './routes/console'
+import { Route as MarketingIndexRouteImport } from './routes/_marketing/index'
+import { Route as MarketingDashboardRouteImport } from './routes/_marketing/dashboard'
+import { Route as MarketingLoginRouteImport } from './routes/_marketing/login'
+import { Route as MarketingPricingRouteImport } from './routes/_marketing/pricing'
+import { Route as MarketingSignupRouteImport } from './routes/_marketing/signup'
+import { Route as ConsoleIndexRouteImport } from './routes/console/index'
+import { Route as ConsoleSplatRouteImport } from './routes/console/$'
+import { Route as ConsoleApiCatalogueRouteImport } from './routes/console/api-catalogue'
+import { Route as ConsoleBillingRouteImport } from './routes/console/billing'
+import { Route as ConsoleFinanceRouteImport } from './routes/console/finance'
+import { Route as ConsolePlatformRouteImport } from './routes/console/platform'
+import { Route as ConsoleProductsRouteImport } from './routes/console/products'
+import { Route as ConsoleReportsRouteImport } from './routes/console/reports'
+import { Route as ConsoleRolesRouteImport } from './routes/console/roles'
+import { Route as ConsoleSecurityRouteImport } from './routes/console/security'
+import { Route as ConsoleServiceRequestsRouteImport } from './routes/console/service-requests'
+import { Route as ConsoleSettingsRouteImport } from './routes/console/settings'
+import { Route as ConsoleSupportRouteImport } from './routes/console/support'
+import { Route as ConsoleSystemRouteImport } from './routes/console/system'
+import { Route as ConsoleTeamRouteImport } from './routes/console/team'
+import { Route as ConsoleUsersRouteImport } from './routes/console/users'
+import { Route as ConsoleVerifyRouteImport } from './routes/console/verify'
+import { Route as MarketingCompanyAboutRouteImport } from './routes/_marketing/company/about'
+import { Route as MarketingCompanyBlogRouteImport } from './routes/_marketing/company/blog'
+import { Route as MarketingCompanyCareersRouteImport } from './routes/_marketing/company/careers'
+import { Route as MarketingCompanyComplianceRouteImport } from './routes/_marketing/company/compliance'
+import { Route as MarketingCompanyContactRouteImport } from './routes/_marketing/company/contact'
+import { Route as MarketingCompanyPrivacyRouteImport } from './routes/_marketing/company/privacy'
+import { Route as MarketingCompanyRefundPolicyRouteImport } from './routes/_marketing/company/refund-policy'
+import { Route as MarketingCompanyTermsRouteImport } from './routes/_marketing/company/terms'
+import { Route as MarketingDevelopersIndexRouteImport } from './routes/_marketing/developers/index'
+import { Route as MarketingDevelopersApiReferenceRouteImport } from './routes/_marketing/developers/api-reference'
+import { Route as MarketingDevelopersDocumentationRouteImport } from './routes/_marketing/developers/documentation'
+import { Route as MarketingDevelopersSandboxRouteImport } from './routes/_marketing/developers/sandbox'
+import { Route as MarketingDevelopersSdksRouteImport } from './routes/_marketing/developers/sdks'
+import { Route as MarketingDevelopersStatusRouteImport } from './routes/_marketing/developers/status'
+import { Route as MarketingProductsIndexRouteImport } from './routes/_marketing/products/index'
+import { Route as MarketingProductsAadhaarVerificationRouteImport } from './routes/_marketing/products/aadhaar-verification'
+import { Route as MarketingProductsApiPlatformRouteImport } from './routes/_marketing/products/api-platform'
+import { Route as MarketingProductsBankUpiVerificationRouteImport } from './routes/_marketing/products/bank-upi-verification'
+import { Route as MarketingProductsBusinessVerificationRouteImport } from './routes/_marketing/products/business-verification'
+import { Route as MarketingProductsDigilockerVerificationRouteImport } from './routes/_marketing/products/digilocker-verification'
+import { Route as MarketingProductsDocumentVerificationRouteImport } from './routes/_marketing/products/document-verification'
+import { Route as MarketingProductsDrivingLicenceVerificationRouteImport } from './routes/_marketing/products/driving-licence-verification'
+import { Route as MarketingProductsEmploymentVerificationRouteImport } from './routes/_marketing/products/employment-verification'
+import { Route as MarketingProductsFullKycRouteImport } from './routes/_marketing/products/full-kyc'
+import { Route as MarketingProductsIdentityVerificationRouteImport } from './routes/_marketing/products/identity-verification'
+import { Route as MarketingProductsPanVerificationRouteImport } from './routes/_marketing/products/pan-verification'
+import { Route as MarketingProductsUanVerificationRouteImport } from './routes/_marketing/products/uan-verification'
+import { Route as MarketingSolutionsIndexRouteImport } from './routes/_marketing/solutions/index'
+import { Route as MarketingSolutionsEnterprisesRouteImport } from './routes/_marketing/solutions/enterprises'
+import { Route as MarketingSolutionsFintechRouteImport } from './routes/_marketing/solutions/fintech'
+import { Route as MarketingSolutionsMarketplacesRouteImport } from './routes/_marketing/solutions/marketplaces'
+import { Route as MarketingSolutionsSaasRouteImport } from './routes/_marketing/solutions/saas'
+import { Route as ConsoleAdminApiKeysRouteImport } from './routes/console/admin/api-keys'
+import { Route as ConsoleAdminTeamMembersRouteImport } from './routes/console/admin/team-members'
+import { Route as ConsoleClientsIndexRouteImport } from './routes/console/clients/index'
+import { Route as ConsoleClientsOrgIdRouteImport } from './routes/console/clients/$orgId'
+import { Route as ConsoleComplianceAuditRouteImport } from './routes/console/compliance/audit'
+import { Route as ConsoleDeveloperKeysRouteImport } from './routes/console/developer/keys'
+import { Route as ConsoleDeveloperLogsRouteImport } from './routes/console/developer/logs'
+import { Route as ConsoleDeveloperWebhooksRouteImport } from './routes/console/developer/webhooks'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const MarketingRoute = MarketingRouteImport.update({
+  id: '/_marketing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConsoleRoute = ConsoleRouteImport.update({
+  id: '/console',
+  path: '/console',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketingIndexRoute = MarketingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingDashboardRoute = MarketingDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingLoginRoute = MarketingLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingPricingRoute = MarketingPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingSignupRoute = MarketingSignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const ConsoleIndexRoute = ConsoleIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleSplatRoute = ConsoleSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleApiCatalogueRoute = ConsoleApiCatalogueRouteImport.update({
+  id: '/api-catalogue',
+  path: '/api-catalogue',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleBillingRoute = ConsoleBillingRouteImport.update({
+  id: '/billing',
+  path: '/billing',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleFinanceRoute = ConsoleFinanceRouteImport.update({
+  id: '/finance',
+  path: '/finance',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsolePlatformRoute = ConsolePlatformRouteImport.update({
+  id: '/platform',
+  path: '/platform',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleProductsRoute = ConsoleProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleReportsRoute = ConsoleReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleRolesRoute = ConsoleRolesRouteImport.update({
+  id: '/roles',
+  path: '/roles',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleSecurityRoute = ConsoleSecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleServiceRequestsRoute = ConsoleServiceRequestsRouteImport.update({
+  id: '/service-requests',
+  path: '/service-requests',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleSettingsRoute = ConsoleSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleSupportRoute = ConsoleSupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleSystemRoute = ConsoleSystemRouteImport.update({
+  id: '/system',
+  path: '/system',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleTeamRoute = ConsoleTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleUsersRoute = ConsoleUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleVerifyRoute = ConsoleVerifyRouteImport.update({
+  id: '/verify',
+  path: '/verify',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const MarketingCompanyAboutRoute = MarketingCompanyAboutRouteImport.update({
+  id: '/company/about',
+  path: '/company/about',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCompanyBlogRoute = MarketingCompanyBlogRouteImport.update({
+  id: '/company/blog',
+  path: '/company/blog',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCompanyCareersRoute = MarketingCompanyCareersRouteImport.update({
+  id: '/company/careers',
+  path: '/company/careers',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCompanyComplianceRoute =
+  MarketingCompanyComplianceRouteImport.update({
+    id: '/company/compliance',
+    path: '/company/compliance',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingCompanyContactRoute = MarketingCompanyContactRouteImport.update({
+  id: '/company/contact',
+  path: '/company/contact',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCompanyPrivacyRoute = MarketingCompanyPrivacyRouteImport.update({
+  id: '/company/privacy',
+  path: '/company/privacy',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCompanyRefundPolicyRoute =
+  MarketingCompanyRefundPolicyRouteImport.update({
+    id: '/company/refund-policy',
+    path: '/company/refund-policy',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingCompanyTermsRoute = MarketingCompanyTermsRouteImport.update({
+  id: '/company/terms',
+  path: '/company/terms',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingDevelopersIndexRoute =
+  MarketingDevelopersIndexRouteImport.update({
+    id: '/developers/',
+    path: '/developers/',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingDevelopersApiReferenceRoute =
+  MarketingDevelopersApiReferenceRouteImport.update({
+    id: '/developers/api-reference',
+    path: '/developers/api-reference',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingDevelopersDocumentationRoute =
+  MarketingDevelopersDocumentationRouteImport.update({
+    id: '/developers/documentation',
+    path: '/developers/documentation',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingDevelopersSandboxRoute =
+  MarketingDevelopersSandboxRouteImport.update({
+    id: '/developers/sandbox',
+    path: '/developers/sandbox',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingDevelopersSdksRoute = MarketingDevelopersSdksRouteImport.update({
+  id: '/developers/sdks',
+  path: '/developers/sdks',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingDevelopersStatusRoute =
+  MarketingDevelopersStatusRouteImport.update({
+    id: '/developers/status',
+    path: '/developers/status',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsIndexRoute = MarketingProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingProductsAadhaarVerificationRoute =
+  MarketingProductsAadhaarVerificationRouteImport.update({
+    id: '/products/aadhaar-verification',
+    path: '/products/aadhaar-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsApiPlatformRoute =
+  MarketingProductsApiPlatformRouteImport.update({
+    id: '/products/api-platform',
+    path: '/products/api-platform',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsBankUpiVerificationRoute =
+  MarketingProductsBankUpiVerificationRouteImport.update({
+    id: '/products/bank-upi-verification',
+    path: '/products/bank-upi-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsBusinessVerificationRoute =
+  MarketingProductsBusinessVerificationRouteImport.update({
+    id: '/products/business-verification',
+    path: '/products/business-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsDigilockerVerificationRoute =
+  MarketingProductsDigilockerVerificationRouteImport.update({
+    id: '/products/digilocker-verification',
+    path: '/products/digilocker-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsDocumentVerificationRoute =
+  MarketingProductsDocumentVerificationRouteImport.update({
+    id: '/products/document-verification',
+    path: '/products/document-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsDrivingLicenceVerificationRoute =
+  MarketingProductsDrivingLicenceVerificationRouteImport.update({
+    id: '/products/driving-licence-verification',
+    path: '/products/driving-licence-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsEmploymentVerificationRoute =
+  MarketingProductsEmploymentVerificationRouteImport.update({
+    id: '/products/employment-verification',
+    path: '/products/employment-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsFullKycRoute =
+  MarketingProductsFullKycRouteImport.update({
+    id: '/products/full-kyc',
+    path: '/products/full-kyc',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsIdentityVerificationRoute =
+  MarketingProductsIdentityVerificationRouteImport.update({
+    id: '/products/identity-verification',
+    path: '/products/identity-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsPanVerificationRoute =
+  MarketingProductsPanVerificationRouteImport.update({
+    id: '/products/pan-verification',
+    path: '/products/pan-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingProductsUanVerificationRoute =
+  MarketingProductsUanVerificationRouteImport.update({
+    id: '/products/uan-verification',
+    path: '/products/uan-verification',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingSolutionsIndexRoute = MarketingSolutionsIndexRouteImport.update({
+  id: '/solutions/',
+  path: '/solutions/',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingSolutionsEnterprisesRoute =
+  MarketingSolutionsEnterprisesRouteImport.update({
+    id: '/solutions/enterprises',
+    path: '/solutions/enterprises',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingSolutionsFintechRoute =
+  MarketingSolutionsFintechRouteImport.update({
+    id: '/solutions/fintech',
+    path: '/solutions/fintech',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingSolutionsMarketplacesRoute =
+  MarketingSolutionsMarketplacesRouteImport.update({
+    id: '/solutions/marketplaces',
+    path: '/solutions/marketplaces',
+    getParentRoute: () => MarketingRoute,
+  } as any)
+const MarketingSolutionsSaasRoute = MarketingSolutionsSaasRouteImport.update({
+  id: '/solutions/saas',
+  path: '/solutions/saas',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const ConsoleAdminApiKeysRoute = ConsoleAdminApiKeysRouteImport.update({
+  id: '/admin/api-keys',
+  path: '/admin/api-keys',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleAdminTeamMembersRoute = ConsoleAdminTeamMembersRouteImport.update({
+  id: '/admin/team-members',
+  path: '/admin/team-members',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleClientsIndexRoute = ConsoleClientsIndexRouteImport.update({
+  id: '/clients/',
+  path: '/clients/',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleClientsOrgIdRoute = ConsoleClientsOrgIdRouteImport.update({
+  id: '/clients/$orgId',
+  path: '/clients/$orgId',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleComplianceAuditRoute = ConsoleComplianceAuditRouteImport.update({
+  id: '/compliance/audit',
+  path: '/compliance/audit',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleDeveloperKeysRoute = ConsoleDeveloperKeysRouteImport.update({
+  id: '/developer/keys',
+  path: '/developer/keys',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleDeveloperLogsRoute = ConsoleDeveloperLogsRouteImport.update({
+  id: '/developer/logs',
+  path: '/developer/logs',
+  getParentRoute: () => ConsoleRoute,
+} as any)
+const ConsoleDeveloperWebhooksRoute =
+  ConsoleDeveloperWebhooksRouteImport.update({
+    id: '/developer/webhooks',
+    path: '/developer/webhooks',
+    getParentRoute: () => ConsoleRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof MarketingIndexRoute
+  '/console': typeof ConsoleRouteWithChildren
+  '/dashboard': typeof MarketingDashboardRoute
+  '/login': typeof MarketingLoginRoute
+  '/pricing': typeof MarketingPricingRoute
+  '/signup': typeof MarketingSignupRoute
+  '/console/$': typeof ConsoleSplatRoute
+  '/console/api-catalogue': typeof ConsoleApiCatalogueRoute
+  '/console/billing': typeof ConsoleBillingRoute
+  '/console/finance': typeof ConsoleFinanceRoute
+  '/console/platform': typeof ConsolePlatformRoute
+  '/console/products': typeof ConsoleProductsRoute
+  '/console/reports': typeof ConsoleReportsRoute
+  '/console/roles': typeof ConsoleRolesRoute
+  '/console/security': typeof ConsoleSecurityRoute
+  '/console/service-requests': typeof ConsoleServiceRequestsRoute
+  '/console/settings': typeof ConsoleSettingsRoute
+  '/console/support': typeof ConsoleSupportRoute
+  '/console/system': typeof ConsoleSystemRoute
+  '/console/team': typeof ConsoleTeamRoute
+  '/console/users': typeof ConsoleUsersRoute
+  '/console/verify': typeof ConsoleVerifyRoute
+  '/console/': typeof ConsoleIndexRoute
+  '/company/about': typeof MarketingCompanyAboutRoute
+  '/company/blog': typeof MarketingCompanyBlogRoute
+  '/company/careers': typeof MarketingCompanyCareersRoute
+  '/company/compliance': typeof MarketingCompanyComplianceRoute
+  '/company/contact': typeof MarketingCompanyContactRoute
+  '/company/privacy': typeof MarketingCompanyPrivacyRoute
+  '/company/refund-policy': typeof MarketingCompanyRefundPolicyRoute
+  '/company/terms': typeof MarketingCompanyTermsRoute
+  '/developers/api-reference': typeof MarketingDevelopersApiReferenceRoute
+  '/developers/documentation': typeof MarketingDevelopersDocumentationRoute
+  '/developers/sandbox': typeof MarketingDevelopersSandboxRoute
+  '/developers/sdks': typeof MarketingDevelopersSdksRoute
+  '/developers/status': typeof MarketingDevelopersStatusRoute
+  '/products/aadhaar-verification': typeof MarketingProductsAadhaarVerificationRoute
+  '/products/api-platform': typeof MarketingProductsApiPlatformRoute
+  '/products/bank-upi-verification': typeof MarketingProductsBankUpiVerificationRoute
+  '/products/business-verification': typeof MarketingProductsBusinessVerificationRoute
+  '/products/digilocker-verification': typeof MarketingProductsDigilockerVerificationRoute
+  '/products/document-verification': typeof MarketingProductsDocumentVerificationRoute
+  '/products/driving-licence-verification': typeof MarketingProductsDrivingLicenceVerificationRoute
+  '/products/employment-verification': typeof MarketingProductsEmploymentVerificationRoute
+  '/products/full-kyc': typeof MarketingProductsFullKycRoute
+  '/products/identity-verification': typeof MarketingProductsIdentityVerificationRoute
+  '/products/pan-verification': typeof MarketingProductsPanVerificationRoute
+  '/products/uan-verification': typeof MarketingProductsUanVerificationRoute
+  '/solutions/enterprises': typeof MarketingSolutionsEnterprisesRoute
+  '/solutions/fintech': typeof MarketingSolutionsFintechRoute
+  '/solutions/marketplaces': typeof MarketingSolutionsMarketplacesRoute
+  '/solutions/saas': typeof MarketingSolutionsSaasRoute
+  '/console/admin/api-keys': typeof ConsoleAdminApiKeysRoute
+  '/console/admin/team-members': typeof ConsoleAdminTeamMembersRoute
+  '/console/clients/$orgId': typeof ConsoleClientsOrgIdRoute
+  '/console/compliance/audit': typeof ConsoleComplianceAuditRoute
+  '/console/developer/keys': typeof ConsoleDeveloperKeysRoute
+  '/console/developer/logs': typeof ConsoleDeveloperLogsRoute
+  '/console/developer/webhooks': typeof ConsoleDeveloperWebhooksRoute
+  '/developers/': typeof MarketingDevelopersIndexRoute
+  '/products/': typeof MarketingProductsIndexRoute
+  '/solutions/': typeof MarketingSolutionsIndexRoute
+  '/console/clients/': typeof ConsoleClientsIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/dashboard': typeof MarketingDashboardRoute
+  '/login': typeof MarketingLoginRoute
+  '/pricing': typeof MarketingPricingRoute
+  '/signup': typeof MarketingSignupRoute
+  '/console/$': typeof ConsoleSplatRoute
+  '/console/api-catalogue': typeof ConsoleApiCatalogueRoute
+  '/console/billing': typeof ConsoleBillingRoute
+  '/console/finance': typeof ConsoleFinanceRoute
+  '/console/platform': typeof ConsolePlatformRoute
+  '/console/products': typeof ConsoleProductsRoute
+  '/console/reports': typeof ConsoleReportsRoute
+  '/console/roles': typeof ConsoleRolesRoute
+  '/console/security': typeof ConsoleSecurityRoute
+  '/console/service-requests': typeof ConsoleServiceRequestsRoute
+  '/console/settings': typeof ConsoleSettingsRoute
+  '/console/support': typeof ConsoleSupportRoute
+  '/console/system': typeof ConsoleSystemRoute
+  '/console/team': typeof ConsoleTeamRoute
+  '/console/users': typeof ConsoleUsersRoute
+  '/console/verify': typeof ConsoleVerifyRoute
+  '/': typeof MarketingIndexRoute
+  '/console': typeof ConsoleIndexRoute
+  '/company/about': typeof MarketingCompanyAboutRoute
+  '/company/blog': typeof MarketingCompanyBlogRoute
+  '/company/careers': typeof MarketingCompanyCareersRoute
+  '/company/compliance': typeof MarketingCompanyComplianceRoute
+  '/company/contact': typeof MarketingCompanyContactRoute
+  '/company/privacy': typeof MarketingCompanyPrivacyRoute
+  '/company/refund-policy': typeof MarketingCompanyRefundPolicyRoute
+  '/company/terms': typeof MarketingCompanyTermsRoute
+  '/developers/api-reference': typeof MarketingDevelopersApiReferenceRoute
+  '/developers/documentation': typeof MarketingDevelopersDocumentationRoute
+  '/developers/sandbox': typeof MarketingDevelopersSandboxRoute
+  '/developers/sdks': typeof MarketingDevelopersSdksRoute
+  '/developers/status': typeof MarketingDevelopersStatusRoute
+  '/products/aadhaar-verification': typeof MarketingProductsAadhaarVerificationRoute
+  '/products/api-platform': typeof MarketingProductsApiPlatformRoute
+  '/products/bank-upi-verification': typeof MarketingProductsBankUpiVerificationRoute
+  '/products/business-verification': typeof MarketingProductsBusinessVerificationRoute
+  '/products/digilocker-verification': typeof MarketingProductsDigilockerVerificationRoute
+  '/products/document-verification': typeof MarketingProductsDocumentVerificationRoute
+  '/products/driving-licence-verification': typeof MarketingProductsDrivingLicenceVerificationRoute
+  '/products/employment-verification': typeof MarketingProductsEmploymentVerificationRoute
+  '/products/full-kyc': typeof MarketingProductsFullKycRoute
+  '/products/identity-verification': typeof MarketingProductsIdentityVerificationRoute
+  '/products/pan-verification': typeof MarketingProductsPanVerificationRoute
+  '/products/uan-verification': typeof MarketingProductsUanVerificationRoute
+  '/solutions/enterprises': typeof MarketingSolutionsEnterprisesRoute
+  '/solutions/fintech': typeof MarketingSolutionsFintechRoute
+  '/solutions/marketplaces': typeof MarketingSolutionsMarketplacesRoute
+  '/solutions/saas': typeof MarketingSolutionsSaasRoute
+  '/console/admin/api-keys': typeof ConsoleAdminApiKeysRoute
+  '/console/admin/team-members': typeof ConsoleAdminTeamMembersRoute
+  '/console/clients/$orgId': typeof ConsoleClientsOrgIdRoute
+  '/console/compliance/audit': typeof ConsoleComplianceAuditRoute
+  '/console/developer/keys': typeof ConsoleDeveloperKeysRoute
+  '/console/developer/logs': typeof ConsoleDeveloperLogsRoute
+  '/console/developer/webhooks': typeof ConsoleDeveloperWebhooksRoute
+  '/developers': typeof MarketingDevelopersIndexRoute
+  '/products': typeof MarketingProductsIndexRoute
+  '/solutions': typeof MarketingSolutionsIndexRoute
+  '/console/clients': typeof ConsoleClientsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_marketing': typeof MarketingRouteWithChildren
+  '/console': typeof ConsoleRouteWithChildren
+  '/_marketing/dashboard': typeof MarketingDashboardRoute
+  '/_marketing/login': typeof MarketingLoginRoute
+  '/_marketing/pricing': typeof MarketingPricingRoute
+  '/_marketing/signup': typeof MarketingSignupRoute
+  '/console/$': typeof ConsoleSplatRoute
+  '/console/api-catalogue': typeof ConsoleApiCatalogueRoute
+  '/console/billing': typeof ConsoleBillingRoute
+  '/console/finance': typeof ConsoleFinanceRoute
+  '/console/platform': typeof ConsolePlatformRoute
+  '/console/products': typeof ConsoleProductsRoute
+  '/console/reports': typeof ConsoleReportsRoute
+  '/console/roles': typeof ConsoleRolesRoute
+  '/console/security': typeof ConsoleSecurityRoute
+  '/console/service-requests': typeof ConsoleServiceRequestsRoute
+  '/console/settings': typeof ConsoleSettingsRoute
+  '/console/support': typeof ConsoleSupportRoute
+  '/console/system': typeof ConsoleSystemRoute
+  '/console/team': typeof ConsoleTeamRoute
+  '/console/users': typeof ConsoleUsersRoute
+  '/console/verify': typeof ConsoleVerifyRoute
+  '/_marketing/': typeof MarketingIndexRoute
+  '/console/': typeof ConsoleIndexRoute
+  '/_marketing/company/about': typeof MarketingCompanyAboutRoute
+  '/_marketing/company/blog': typeof MarketingCompanyBlogRoute
+  '/_marketing/company/careers': typeof MarketingCompanyCareersRoute
+  '/_marketing/company/compliance': typeof MarketingCompanyComplianceRoute
+  '/_marketing/company/contact': typeof MarketingCompanyContactRoute
+  '/_marketing/company/privacy': typeof MarketingCompanyPrivacyRoute
+  '/_marketing/company/refund-policy': typeof MarketingCompanyRefundPolicyRoute
+  '/_marketing/company/terms': typeof MarketingCompanyTermsRoute
+  '/_marketing/developers/api-reference': typeof MarketingDevelopersApiReferenceRoute
+  '/_marketing/developers/documentation': typeof MarketingDevelopersDocumentationRoute
+  '/_marketing/developers/sandbox': typeof MarketingDevelopersSandboxRoute
+  '/_marketing/developers/sdks': typeof MarketingDevelopersSdksRoute
+  '/_marketing/developers/status': typeof MarketingDevelopersStatusRoute
+  '/_marketing/products/aadhaar-verification': typeof MarketingProductsAadhaarVerificationRoute
+  '/_marketing/products/api-platform': typeof MarketingProductsApiPlatformRoute
+  '/_marketing/products/bank-upi-verification': typeof MarketingProductsBankUpiVerificationRoute
+  '/_marketing/products/business-verification': typeof MarketingProductsBusinessVerificationRoute
+  '/_marketing/products/digilocker-verification': typeof MarketingProductsDigilockerVerificationRoute
+  '/_marketing/products/document-verification': typeof MarketingProductsDocumentVerificationRoute
+  '/_marketing/products/driving-licence-verification': typeof MarketingProductsDrivingLicenceVerificationRoute
+  '/_marketing/products/employment-verification': typeof MarketingProductsEmploymentVerificationRoute
+  '/_marketing/products/full-kyc': typeof MarketingProductsFullKycRoute
+  '/_marketing/products/identity-verification': typeof MarketingProductsIdentityVerificationRoute
+  '/_marketing/products/pan-verification': typeof MarketingProductsPanVerificationRoute
+  '/_marketing/products/uan-verification': typeof MarketingProductsUanVerificationRoute
+  '/_marketing/solutions/enterprises': typeof MarketingSolutionsEnterprisesRoute
+  '/_marketing/solutions/fintech': typeof MarketingSolutionsFintechRoute
+  '/_marketing/solutions/marketplaces': typeof MarketingSolutionsMarketplacesRoute
+  '/_marketing/solutions/saas': typeof MarketingSolutionsSaasRoute
+  '/console/admin/api-keys': typeof ConsoleAdminApiKeysRoute
+  '/console/admin/team-members': typeof ConsoleAdminTeamMembersRoute
+  '/console/clients/$orgId': typeof ConsoleClientsOrgIdRoute
+  '/console/compliance/audit': typeof ConsoleComplianceAuditRoute
+  '/console/developer/keys': typeof ConsoleDeveloperKeysRoute
+  '/console/developer/logs': typeof ConsoleDeveloperLogsRoute
+  '/console/developer/webhooks': typeof ConsoleDeveloperWebhooksRoute
+  '/_marketing/developers/': typeof MarketingDevelopersIndexRoute
+  '/_marketing/products/': typeof MarketingProductsIndexRoute
+  '/_marketing/solutions/': typeof MarketingSolutionsIndexRoute
+  '/console/clients/': typeof ConsoleClientsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/console'
+    | '/dashboard'
+    | '/login'
+    | '/pricing'
+    | '/signup'
+    | '/console/$'
+    | '/console/api-catalogue'
+    | '/console/billing'
+    | '/console/finance'
+    | '/console/platform'
+    | '/console/products'
+    | '/console/reports'
+    | '/console/roles'
+    | '/console/security'
+    | '/console/service-requests'
+    | '/console/settings'
+    | '/console/support'
+    | '/console/system'
+    | '/console/team'
+    | '/console/users'
+    | '/console/verify'
+    | '/console/'
+    | '/company/about'
+    | '/company/blog'
+    | '/company/careers'
+    | '/company/compliance'
+    | '/company/contact'
+    | '/company/privacy'
+    | '/company/refund-policy'
+    | '/company/terms'
+    | '/developers/api-reference'
+    | '/developers/documentation'
+    | '/developers/sandbox'
+    | '/developers/sdks'
+    | '/developers/status'
+    | '/products/aadhaar-verification'
+    | '/products/api-platform'
+    | '/products/bank-upi-verification'
+    | '/products/business-verification'
+    | '/products/digilocker-verification'
+    | '/products/document-verification'
+    | '/products/driving-licence-verification'
+    | '/products/employment-verification'
+    | '/products/full-kyc'
+    | '/products/identity-verification'
+    | '/products/pan-verification'
+    | '/products/uan-verification'
+    | '/solutions/enterprises'
+    | '/solutions/fintech'
+    | '/solutions/marketplaces'
+    | '/solutions/saas'
+    | '/console/admin/api-keys'
+    | '/console/admin/team-members'
+    | '/console/clients/$orgId'
+    | '/console/compliance/audit'
+    | '/console/developer/keys'
+    | '/console/developer/logs'
+    | '/console/developer/webhooks'
+    | '/developers/'
+    | '/products/'
+    | '/solutions/'
+    | '/console/clients/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/dashboard'
+    | '/login'
+    | '/pricing'
+    | '/signup'
+    | '/console/$'
+    | '/console/api-catalogue'
+    | '/console/billing'
+    | '/console/finance'
+    | '/console/platform'
+    | '/console/products'
+    | '/console/reports'
+    | '/console/roles'
+    | '/console/security'
+    | '/console/service-requests'
+    | '/console/settings'
+    | '/console/support'
+    | '/console/system'
+    | '/console/team'
+    | '/console/users'
+    | '/console/verify'
+    | '/'
+    | '/console'
+    | '/company/about'
+    | '/company/blog'
+    | '/company/careers'
+    | '/company/compliance'
+    | '/company/contact'
+    | '/company/privacy'
+    | '/company/refund-policy'
+    | '/company/terms'
+    | '/developers/api-reference'
+    | '/developers/documentation'
+    | '/developers/sandbox'
+    | '/developers/sdks'
+    | '/developers/status'
+    | '/products/aadhaar-verification'
+    | '/products/api-platform'
+    | '/products/bank-upi-verification'
+    | '/products/business-verification'
+    | '/products/digilocker-verification'
+    | '/products/document-verification'
+    | '/products/driving-licence-verification'
+    | '/products/employment-verification'
+    | '/products/full-kyc'
+    | '/products/identity-verification'
+    | '/products/pan-verification'
+    | '/products/uan-verification'
+    | '/solutions/enterprises'
+    | '/solutions/fintech'
+    | '/solutions/marketplaces'
+    | '/solutions/saas'
+    | '/console/admin/api-keys'
+    | '/console/admin/team-members'
+    | '/console/clients/$orgId'
+    | '/console/compliance/audit'
+    | '/console/developer/keys'
+    | '/console/developer/logs'
+    | '/console/developer/webhooks'
+    | '/developers'
+    | '/products'
+    | '/solutions'
+    | '/console/clients'
+  id:
+    | '__root__'
+    | '/_marketing'
+    | '/console'
+    | '/_marketing/dashboard'
+    | '/_marketing/login'
+    | '/_marketing/pricing'
+    | '/_marketing/signup'
+    | '/console/$'
+    | '/console/api-catalogue'
+    | '/console/billing'
+    | '/console/finance'
+    | '/console/platform'
+    | '/console/products'
+    | '/console/reports'
+    | '/console/roles'
+    | '/console/security'
+    | '/console/service-requests'
+    | '/console/settings'
+    | '/console/support'
+    | '/console/system'
+    | '/console/team'
+    | '/console/users'
+    | '/console/verify'
+    | '/_marketing/'
+    | '/console/'
+    | '/_marketing/company/about'
+    | '/_marketing/company/blog'
+    | '/_marketing/company/careers'
+    | '/_marketing/company/compliance'
+    | '/_marketing/company/contact'
+    | '/_marketing/company/privacy'
+    | '/_marketing/company/refund-policy'
+    | '/_marketing/company/terms'
+    | '/_marketing/developers/api-reference'
+    | '/_marketing/developers/documentation'
+    | '/_marketing/developers/sandbox'
+    | '/_marketing/developers/sdks'
+    | '/_marketing/developers/status'
+    | '/_marketing/products/aadhaar-verification'
+    | '/_marketing/products/api-platform'
+    | '/_marketing/products/bank-upi-verification'
+    | '/_marketing/products/business-verification'
+    | '/_marketing/products/digilocker-verification'
+    | '/_marketing/products/document-verification'
+    | '/_marketing/products/driving-licence-verification'
+    | '/_marketing/products/employment-verification'
+    | '/_marketing/products/full-kyc'
+    | '/_marketing/products/identity-verification'
+    | '/_marketing/products/pan-verification'
+    | '/_marketing/products/uan-verification'
+    | '/_marketing/solutions/enterprises'
+    | '/_marketing/solutions/fintech'
+    | '/_marketing/solutions/marketplaces'
+    | '/_marketing/solutions/saas'
+    | '/console/admin/api-keys'
+    | '/console/admin/team-members'
+    | '/console/clients/$orgId'
+    | '/console/compliance/audit'
+    | '/console/developer/keys'
+    | '/console/developer/logs'
+    | '/console/developer/webhooks'
+    | '/_marketing/developers/'
+    | '/_marketing/products/'
+    | '/_marketing/solutions/'
+    | '/console/clients/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  MarketingRoute: typeof MarketingRouteWithChildren
+  ConsoleRoute: typeof ConsoleRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_marketing': {
+      id: '/_marketing'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof MarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/console': {
+      id: '/console'
+      path: '/console'
+      fullPath: '/console'
+      preLoaderRoute: typeof ConsoleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_marketing/': {
+      id: '/_marketing/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof MarketingIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/dashboard': {
+      id: '/_marketing/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof MarketingDashboardRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/login': {
+      id: '/_marketing/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof MarketingLoginRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/pricing': {
+      id: '/_marketing/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof MarketingPricingRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/signup': {
+      id: '/_marketing/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof MarketingSignupRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/console/': {
+      id: '/console/'
+      path: '/'
+      fullPath: '/console/'
+      preLoaderRoute: typeof ConsoleIndexRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/$': {
+      id: '/console/$'
+      path: '/$'
+      fullPath: '/console/$'
+      preLoaderRoute: typeof ConsoleSplatRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/api-catalogue': {
+      id: '/console/api-catalogue'
+      path: '/api-catalogue'
+      fullPath: '/console/api-catalogue'
+      preLoaderRoute: typeof ConsoleApiCatalogueRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/billing': {
+      id: '/console/billing'
+      path: '/billing'
+      fullPath: '/console/billing'
+      preLoaderRoute: typeof ConsoleBillingRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/finance': {
+      id: '/console/finance'
+      path: '/finance'
+      fullPath: '/console/finance'
+      preLoaderRoute: typeof ConsoleFinanceRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/platform': {
+      id: '/console/platform'
+      path: '/platform'
+      fullPath: '/console/platform'
+      preLoaderRoute: typeof ConsolePlatformRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/products': {
+      id: '/console/products'
+      path: '/products'
+      fullPath: '/console/products'
+      preLoaderRoute: typeof ConsoleProductsRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/reports': {
+      id: '/console/reports'
+      path: '/reports'
+      fullPath: '/console/reports'
+      preLoaderRoute: typeof ConsoleReportsRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/roles': {
+      id: '/console/roles'
+      path: '/roles'
+      fullPath: '/console/roles'
+      preLoaderRoute: typeof ConsoleRolesRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/security': {
+      id: '/console/security'
+      path: '/security'
+      fullPath: '/console/security'
+      preLoaderRoute: typeof ConsoleSecurityRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/service-requests': {
+      id: '/console/service-requests'
+      path: '/service-requests'
+      fullPath: '/console/service-requests'
+      preLoaderRoute: typeof ConsoleServiceRequestsRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/settings': {
+      id: '/console/settings'
+      path: '/settings'
+      fullPath: '/console/settings'
+      preLoaderRoute: typeof ConsoleSettingsRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/support': {
+      id: '/console/support'
+      path: '/support'
+      fullPath: '/console/support'
+      preLoaderRoute: typeof ConsoleSupportRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/system': {
+      id: '/console/system'
+      path: '/system'
+      fullPath: '/console/system'
+      preLoaderRoute: typeof ConsoleSystemRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/team': {
+      id: '/console/team'
+      path: '/team'
+      fullPath: '/console/team'
+      preLoaderRoute: typeof ConsoleTeamRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/users': {
+      id: '/console/users'
+      path: '/users'
+      fullPath: '/console/users'
+      preLoaderRoute: typeof ConsoleUsersRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/verify': {
+      id: '/console/verify'
+      path: '/verify'
+      fullPath: '/console/verify'
+      preLoaderRoute: typeof ConsoleVerifyRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/_marketing/company/about': {
+      id: '/_marketing/company/about'
+      path: '/company/about'
+      fullPath: '/company/about'
+      preLoaderRoute: typeof MarketingCompanyAboutRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/company/blog': {
+      id: '/_marketing/company/blog'
+      path: '/company/blog'
+      fullPath: '/company/blog'
+      preLoaderRoute: typeof MarketingCompanyBlogRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/company/careers': {
+      id: '/_marketing/company/careers'
+      path: '/company/careers'
+      fullPath: '/company/careers'
+      preLoaderRoute: typeof MarketingCompanyCareersRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/company/compliance': {
+      id: '/_marketing/company/compliance'
+      path: '/company/compliance'
+      fullPath: '/company/compliance'
+      preLoaderRoute: typeof MarketingCompanyComplianceRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/company/contact': {
+      id: '/_marketing/company/contact'
+      path: '/company/contact'
+      fullPath: '/company/contact'
+      preLoaderRoute: typeof MarketingCompanyContactRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/company/privacy': {
+      id: '/_marketing/company/privacy'
+      path: '/company/privacy'
+      fullPath: '/company/privacy'
+      preLoaderRoute: typeof MarketingCompanyPrivacyRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/company/refund-policy': {
+      id: '/_marketing/company/refund-policy'
+      path: '/company/refund-policy'
+      fullPath: '/company/refund-policy'
+      preLoaderRoute: typeof MarketingCompanyRefundPolicyRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/company/terms': {
+      id: '/_marketing/company/terms'
+      path: '/company/terms'
+      fullPath: '/company/terms'
+      preLoaderRoute: typeof MarketingCompanyTermsRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/developers/': {
+      id: '/_marketing/developers/'
+      path: '/developers'
+      fullPath: '/developers/'
+      preLoaderRoute: typeof MarketingDevelopersIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/developers/api-reference': {
+      id: '/_marketing/developers/api-reference'
+      path: '/developers/api-reference'
+      fullPath: '/developers/api-reference'
+      preLoaderRoute: typeof MarketingDevelopersApiReferenceRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/developers/documentation': {
+      id: '/_marketing/developers/documentation'
+      path: '/developers/documentation'
+      fullPath: '/developers/documentation'
+      preLoaderRoute: typeof MarketingDevelopersDocumentationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/developers/sandbox': {
+      id: '/_marketing/developers/sandbox'
+      path: '/developers/sandbox'
+      fullPath: '/developers/sandbox'
+      preLoaderRoute: typeof MarketingDevelopersSandboxRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/developers/sdks': {
+      id: '/_marketing/developers/sdks'
+      path: '/developers/sdks'
+      fullPath: '/developers/sdks'
+      preLoaderRoute: typeof MarketingDevelopersSdksRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/developers/status': {
+      id: '/_marketing/developers/status'
+      path: '/developers/status'
+      fullPath: '/developers/status'
+      preLoaderRoute: typeof MarketingDevelopersStatusRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/': {
+      id: '/_marketing/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof MarketingProductsIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/aadhaar-verification': {
+      id: '/_marketing/products/aadhaar-verification'
+      path: '/products/aadhaar-verification'
+      fullPath: '/products/aadhaar-verification'
+      preLoaderRoute: typeof MarketingProductsAadhaarVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/api-platform': {
+      id: '/_marketing/products/api-platform'
+      path: '/products/api-platform'
+      fullPath: '/products/api-platform'
+      preLoaderRoute: typeof MarketingProductsApiPlatformRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/bank-upi-verification': {
+      id: '/_marketing/products/bank-upi-verification'
+      path: '/products/bank-upi-verification'
+      fullPath: '/products/bank-upi-verification'
+      preLoaderRoute: typeof MarketingProductsBankUpiVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/business-verification': {
+      id: '/_marketing/products/business-verification'
+      path: '/products/business-verification'
+      fullPath: '/products/business-verification'
+      preLoaderRoute: typeof MarketingProductsBusinessVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/digilocker-verification': {
+      id: '/_marketing/products/digilocker-verification'
+      path: '/products/digilocker-verification'
+      fullPath: '/products/digilocker-verification'
+      preLoaderRoute: typeof MarketingProductsDigilockerVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/document-verification': {
+      id: '/_marketing/products/document-verification'
+      path: '/products/document-verification'
+      fullPath: '/products/document-verification'
+      preLoaderRoute: typeof MarketingProductsDocumentVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/driving-licence-verification': {
+      id: '/_marketing/products/driving-licence-verification'
+      path: '/products/driving-licence-verification'
+      fullPath: '/products/driving-licence-verification'
+      preLoaderRoute: typeof MarketingProductsDrivingLicenceVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/employment-verification': {
+      id: '/_marketing/products/employment-verification'
+      path: '/products/employment-verification'
+      fullPath: '/products/employment-verification'
+      preLoaderRoute: typeof MarketingProductsEmploymentVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/full-kyc': {
+      id: '/_marketing/products/full-kyc'
+      path: '/products/full-kyc'
+      fullPath: '/products/full-kyc'
+      preLoaderRoute: typeof MarketingProductsFullKycRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/identity-verification': {
+      id: '/_marketing/products/identity-verification'
+      path: '/products/identity-verification'
+      fullPath: '/products/identity-verification'
+      preLoaderRoute: typeof MarketingProductsIdentityVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/pan-verification': {
+      id: '/_marketing/products/pan-verification'
+      path: '/products/pan-verification'
+      fullPath: '/products/pan-verification'
+      preLoaderRoute: typeof MarketingProductsPanVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/products/uan-verification': {
+      id: '/_marketing/products/uan-verification'
+      path: '/products/uan-verification'
+      fullPath: '/products/uan-verification'
+      preLoaderRoute: typeof MarketingProductsUanVerificationRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/solutions/': {
+      id: '/_marketing/solutions/'
+      path: '/solutions'
+      fullPath: '/solutions/'
+      preLoaderRoute: typeof MarketingSolutionsIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/solutions/enterprises': {
+      id: '/_marketing/solutions/enterprises'
+      path: '/solutions/enterprises'
+      fullPath: '/solutions/enterprises'
+      preLoaderRoute: typeof MarketingSolutionsEnterprisesRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/solutions/fintech': {
+      id: '/_marketing/solutions/fintech'
+      path: '/solutions/fintech'
+      fullPath: '/solutions/fintech'
+      preLoaderRoute: typeof MarketingSolutionsFintechRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/solutions/marketplaces': {
+      id: '/_marketing/solutions/marketplaces'
+      path: '/solutions/marketplaces'
+      fullPath: '/solutions/marketplaces'
+      preLoaderRoute: typeof MarketingSolutionsMarketplacesRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/solutions/saas': {
+      id: '/_marketing/solutions/saas'
+      path: '/solutions/saas'
+      fullPath: '/solutions/saas'
+      preLoaderRoute: typeof MarketingSolutionsSaasRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/console/admin/api-keys': {
+      id: '/console/admin/api-keys'
+      path: '/admin/api-keys'
+      fullPath: '/console/admin/api-keys'
+      preLoaderRoute: typeof ConsoleAdminApiKeysRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/admin/team-members': {
+      id: '/console/admin/team-members'
+      path: '/admin/team-members'
+      fullPath: '/console/admin/team-members'
+      preLoaderRoute: typeof ConsoleAdminTeamMembersRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/clients/': {
+      id: '/console/clients/'
+      path: '/clients'
+      fullPath: '/console/clients/'
+      preLoaderRoute: typeof ConsoleClientsIndexRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/clients/$orgId': {
+      id: '/console/clients/$orgId'
+      path: '/clients/$orgId'
+      fullPath: '/console/clients/$orgId'
+      preLoaderRoute: typeof ConsoleClientsOrgIdRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/compliance/audit': {
+      id: '/console/compliance/audit'
+      path: '/compliance/audit'
+      fullPath: '/console/compliance/audit'
+      preLoaderRoute: typeof ConsoleComplianceAuditRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/developer/keys': {
+      id: '/console/developer/keys'
+      path: '/developer/keys'
+      fullPath: '/console/developer/keys'
+      preLoaderRoute: typeof ConsoleDeveloperKeysRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/developer/logs': {
+      id: '/console/developer/logs'
+      path: '/developer/logs'
+      fullPath: '/console/developer/logs'
+      preLoaderRoute: typeof ConsoleDeveloperLogsRouteImport
+      parentRoute: typeof ConsoleRoute
+    }
+    '/console/developer/webhooks': {
+      id: '/console/developer/webhooks'
+      path: '/developer/webhooks'
+      fullPath: '/console/developer/webhooks'
+      preLoaderRoute: typeof ConsoleDeveloperWebhooksRouteImport
+      parentRoute: typeof ConsoleRoute
     }
   }
 }
 
+interface MarketingRouteChildren {
+  MarketingDashboardRoute: typeof MarketingDashboardRoute
+  MarketingLoginRoute: typeof MarketingLoginRoute
+  MarketingPricingRoute: typeof MarketingPricingRoute
+  MarketingSignupRoute: typeof MarketingSignupRoute
+  MarketingIndexRoute: typeof MarketingIndexRoute
+  MarketingCompanyAboutRoute: typeof MarketingCompanyAboutRoute
+  MarketingCompanyBlogRoute: typeof MarketingCompanyBlogRoute
+  MarketingCompanyCareersRoute: typeof MarketingCompanyCareersRoute
+  MarketingCompanyComplianceRoute: typeof MarketingCompanyComplianceRoute
+  MarketingCompanyContactRoute: typeof MarketingCompanyContactRoute
+  MarketingCompanyPrivacyRoute: typeof MarketingCompanyPrivacyRoute
+  MarketingCompanyRefundPolicyRoute: typeof MarketingCompanyRefundPolicyRoute
+  MarketingCompanyTermsRoute: typeof MarketingCompanyTermsRoute
+  MarketingDevelopersApiReferenceRoute: typeof MarketingDevelopersApiReferenceRoute
+  MarketingDevelopersDocumentationRoute: typeof MarketingDevelopersDocumentationRoute
+  MarketingDevelopersSandboxRoute: typeof MarketingDevelopersSandboxRoute
+  MarketingDevelopersSdksRoute: typeof MarketingDevelopersSdksRoute
+  MarketingDevelopersStatusRoute: typeof MarketingDevelopersStatusRoute
+  MarketingProductsAadhaarVerificationRoute: typeof MarketingProductsAadhaarVerificationRoute
+  MarketingProductsApiPlatformRoute: typeof MarketingProductsApiPlatformRoute
+  MarketingProductsBankUpiVerificationRoute: typeof MarketingProductsBankUpiVerificationRoute
+  MarketingProductsBusinessVerificationRoute: typeof MarketingProductsBusinessVerificationRoute
+  MarketingProductsDigilockerVerificationRoute: typeof MarketingProductsDigilockerVerificationRoute
+  MarketingProductsDocumentVerificationRoute: typeof MarketingProductsDocumentVerificationRoute
+  MarketingProductsDrivingLicenceVerificationRoute: typeof MarketingProductsDrivingLicenceVerificationRoute
+  MarketingProductsEmploymentVerificationRoute: typeof MarketingProductsEmploymentVerificationRoute
+  MarketingProductsFullKycRoute: typeof MarketingProductsFullKycRoute
+  MarketingProductsIdentityVerificationRoute: typeof MarketingProductsIdentityVerificationRoute
+  MarketingProductsPanVerificationRoute: typeof MarketingProductsPanVerificationRoute
+  MarketingProductsUanVerificationRoute: typeof MarketingProductsUanVerificationRoute
+  MarketingSolutionsEnterprisesRoute: typeof MarketingSolutionsEnterprisesRoute
+  MarketingSolutionsFintechRoute: typeof MarketingSolutionsFintechRoute
+  MarketingSolutionsMarketplacesRoute: typeof MarketingSolutionsMarketplacesRoute
+  MarketingSolutionsSaasRoute: typeof MarketingSolutionsSaasRoute
+  MarketingDevelopersIndexRoute: typeof MarketingDevelopersIndexRoute
+  MarketingProductsIndexRoute: typeof MarketingProductsIndexRoute
+  MarketingSolutionsIndexRoute: typeof MarketingSolutionsIndexRoute
+}
+
+const MarketingRouteChildren: MarketingRouteChildren = {
+  MarketingDashboardRoute: MarketingDashboardRoute,
+  MarketingLoginRoute: MarketingLoginRoute,
+  MarketingPricingRoute: MarketingPricingRoute,
+  MarketingSignupRoute: MarketingSignupRoute,
+  MarketingIndexRoute: MarketingIndexRoute,
+  MarketingCompanyAboutRoute: MarketingCompanyAboutRoute,
+  MarketingCompanyBlogRoute: MarketingCompanyBlogRoute,
+  MarketingCompanyCareersRoute: MarketingCompanyCareersRoute,
+  MarketingCompanyComplianceRoute: MarketingCompanyComplianceRoute,
+  MarketingCompanyContactRoute: MarketingCompanyContactRoute,
+  MarketingCompanyPrivacyRoute: MarketingCompanyPrivacyRoute,
+  MarketingCompanyRefundPolicyRoute: MarketingCompanyRefundPolicyRoute,
+  MarketingCompanyTermsRoute: MarketingCompanyTermsRoute,
+  MarketingDevelopersApiReferenceRoute: MarketingDevelopersApiReferenceRoute,
+  MarketingDevelopersDocumentationRoute: MarketingDevelopersDocumentationRoute,
+  MarketingDevelopersSandboxRoute: MarketingDevelopersSandboxRoute,
+  MarketingDevelopersSdksRoute: MarketingDevelopersSdksRoute,
+  MarketingDevelopersStatusRoute: MarketingDevelopersStatusRoute,
+  MarketingProductsAadhaarVerificationRoute:
+    MarketingProductsAadhaarVerificationRoute,
+  MarketingProductsApiPlatformRoute: MarketingProductsApiPlatformRoute,
+  MarketingProductsBankUpiVerificationRoute:
+    MarketingProductsBankUpiVerificationRoute,
+  MarketingProductsBusinessVerificationRoute:
+    MarketingProductsBusinessVerificationRoute,
+  MarketingProductsDigilockerVerificationRoute:
+    MarketingProductsDigilockerVerificationRoute,
+  MarketingProductsDocumentVerificationRoute:
+    MarketingProductsDocumentVerificationRoute,
+  MarketingProductsDrivingLicenceVerificationRoute:
+    MarketingProductsDrivingLicenceVerificationRoute,
+  MarketingProductsEmploymentVerificationRoute:
+    MarketingProductsEmploymentVerificationRoute,
+  MarketingProductsFullKycRoute: MarketingProductsFullKycRoute,
+  MarketingProductsIdentityVerificationRoute:
+    MarketingProductsIdentityVerificationRoute,
+  MarketingProductsPanVerificationRoute: MarketingProductsPanVerificationRoute,
+  MarketingProductsUanVerificationRoute: MarketingProductsUanVerificationRoute,
+  MarketingSolutionsEnterprisesRoute: MarketingSolutionsEnterprisesRoute,
+  MarketingSolutionsFintechRoute: MarketingSolutionsFintechRoute,
+  MarketingSolutionsMarketplacesRoute: MarketingSolutionsMarketplacesRoute,
+  MarketingSolutionsSaasRoute: MarketingSolutionsSaasRoute,
+  MarketingDevelopersIndexRoute: MarketingDevelopersIndexRoute,
+  MarketingProductsIndexRoute: MarketingProductsIndexRoute,
+  MarketingSolutionsIndexRoute: MarketingSolutionsIndexRoute,
+}
+
+const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
+  MarketingRouteChildren,
+)
+
+interface ConsoleRouteChildren {
+  ConsoleSplatRoute: typeof ConsoleSplatRoute
+  ConsoleApiCatalogueRoute: typeof ConsoleApiCatalogueRoute
+  ConsoleBillingRoute: typeof ConsoleBillingRoute
+  ConsoleFinanceRoute: typeof ConsoleFinanceRoute
+  ConsolePlatformRoute: typeof ConsolePlatformRoute
+  ConsoleProductsRoute: typeof ConsoleProductsRoute
+  ConsoleReportsRoute: typeof ConsoleReportsRoute
+  ConsoleRolesRoute: typeof ConsoleRolesRoute
+  ConsoleSecurityRoute: typeof ConsoleSecurityRoute
+  ConsoleServiceRequestsRoute: typeof ConsoleServiceRequestsRoute
+  ConsoleSettingsRoute: typeof ConsoleSettingsRoute
+  ConsoleSupportRoute: typeof ConsoleSupportRoute
+  ConsoleSystemRoute: typeof ConsoleSystemRoute
+  ConsoleTeamRoute: typeof ConsoleTeamRoute
+  ConsoleUsersRoute: typeof ConsoleUsersRoute
+  ConsoleVerifyRoute: typeof ConsoleVerifyRoute
+  ConsoleIndexRoute: typeof ConsoleIndexRoute
+  ConsoleAdminApiKeysRoute: typeof ConsoleAdminApiKeysRoute
+  ConsoleAdminTeamMembersRoute: typeof ConsoleAdminTeamMembersRoute
+  ConsoleClientsOrgIdRoute: typeof ConsoleClientsOrgIdRoute
+  ConsoleComplianceAuditRoute: typeof ConsoleComplianceAuditRoute
+  ConsoleDeveloperKeysRoute: typeof ConsoleDeveloperKeysRoute
+  ConsoleDeveloperLogsRoute: typeof ConsoleDeveloperLogsRoute
+  ConsoleDeveloperWebhooksRoute: typeof ConsoleDeveloperWebhooksRoute
+  ConsoleClientsIndexRoute: typeof ConsoleClientsIndexRoute
+}
+
+const ConsoleRouteChildren: ConsoleRouteChildren = {
+  ConsoleSplatRoute: ConsoleSplatRoute,
+  ConsoleApiCatalogueRoute: ConsoleApiCatalogueRoute,
+  ConsoleBillingRoute: ConsoleBillingRoute,
+  ConsoleFinanceRoute: ConsoleFinanceRoute,
+  ConsolePlatformRoute: ConsolePlatformRoute,
+  ConsoleProductsRoute: ConsoleProductsRoute,
+  ConsoleReportsRoute: ConsoleReportsRoute,
+  ConsoleRolesRoute: ConsoleRolesRoute,
+  ConsoleSecurityRoute: ConsoleSecurityRoute,
+  ConsoleServiceRequestsRoute: ConsoleServiceRequestsRoute,
+  ConsoleSettingsRoute: ConsoleSettingsRoute,
+  ConsoleSupportRoute: ConsoleSupportRoute,
+  ConsoleSystemRoute: ConsoleSystemRoute,
+  ConsoleTeamRoute: ConsoleTeamRoute,
+  ConsoleUsersRoute: ConsoleUsersRoute,
+  ConsoleVerifyRoute: ConsoleVerifyRoute,
+  ConsoleIndexRoute: ConsoleIndexRoute,
+  ConsoleAdminApiKeysRoute: ConsoleAdminApiKeysRoute,
+  ConsoleAdminTeamMembersRoute: ConsoleAdminTeamMembersRoute,
+  ConsoleClientsOrgIdRoute: ConsoleClientsOrgIdRoute,
+  ConsoleComplianceAuditRoute: ConsoleComplianceAuditRoute,
+  ConsoleDeveloperKeysRoute: ConsoleDeveloperKeysRoute,
+  ConsoleDeveloperLogsRoute: ConsoleDeveloperLogsRoute,
+  ConsoleDeveloperWebhooksRoute: ConsoleDeveloperWebhooksRoute,
+  ConsoleClientsIndexRoute: ConsoleClientsIndexRoute,
+}
+
+const ConsoleRouteWithChildren =
+  ConsoleRoute._addFileChildren(ConsoleRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  MarketingRoute: MarketingRouteWithChildren,
+  ConsoleRoute: ConsoleRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
